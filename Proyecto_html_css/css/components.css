@@ -251,7 +251,7 @@
     height: 50px;
 }
 .seccion-newsletter {
-    background-color: #f9f9f9; /* Un tono suave de fondo */
+    background-color: #f9f9f9;
     padding: 60px 20px;
     border-top: 2px solid #e0e0e0;
 }
@@ -286,7 +286,7 @@
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    box-sizing: border-box; /* Importante para que el padding no rompa el ancho */
+    box-sizing: border-box;
 }
 
 .boton-suscripcion {
@@ -310,6 +310,88 @@
     font-size: 0.85rem;
     margin-bottom: 20px;
     color: #555;
+}
+/* --- 1. Estilos Base y Layout --- */
+.dashboard-section {
+    padding: 40px;
+    background-color: #1a1c1e; /* Fondo oscuro principal */
+    color: #e0e0e0;
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+.dashboard-header h1 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* --- 2. Grid del Dashboard --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    grid-template-rows: 220px 280px;      /* Altura de las filas */
+    gap: 20px;
+}
+
+/* --- 3. Tarjetas (Cards) --- */
+.card {
+    background-color: #25282a; /* Fondo de tarjeta */
+    border: 1px solid #3e4448;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+    border-color: #4caf50; /* Resaltado verde al pasar el mouse */
+}
+
+/* --- 4. Resumen de Impacto (Especial) --- */
+.summary-card {
+    grid-row: span 2; /* Ocupa la altura de las dos filas */
+    background-color: #25282a;
+}
+
+.summary-card h3 {
+    color: #4caf50;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.summary-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.summary-card li {
+    padding: 12px 0;
+    border-bottom: 1px solid #3e4448;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+/* --- 5. Tipografía y detalles --- */
+.card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+/* Ajuste para pantallas pequeñas (responsivo) */
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .summary-card {
+        grid-row: auto;
+    }
 }
 @media (max-width: 768px) {
     .navbar{
